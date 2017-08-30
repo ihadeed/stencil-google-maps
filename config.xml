@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+<widget id="ca.ibby.stencilgooglemaps" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Stencil Google Maps Demo</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -23,4 +23,8 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-googlemaps" spec="git+https://github.com/mapsplugin/cordova-plugin-googlemaps.git#multiple_maps">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDprtwhsBk0oonfHN1i0QJF51b_jeWTx6A" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyDprtwhsBk0oonfHN1i0QJF51b_jeWTx6A" />
+    </plugin>
 </widget>
