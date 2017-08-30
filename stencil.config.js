@@ -1,13 +1,10 @@
 exports.config = {
-  bundles: [
-    { components: ['my-name'] }
-  ],
-  collections: [
-    { name: '@stencil/router' }
-  ]
+    bundles: [
+        { components: ['google-maps', 'hybrid-google-maps', 'cordova-google-maps'] }
+    ]
 };
 
 exports.devServer = {
-  root: 'www',
-  watchGlob: '**/**'
-}
+    root: 'www',
+    watchGlob: '**/**'
+};

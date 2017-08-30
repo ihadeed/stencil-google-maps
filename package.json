@@ -18,7 +18,8 @@
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest"
+    "@stencil/utils": "latest",
+    "@types/googlemaps": "^3.26.20"
   },
   "repository": {
     "type": "git",
