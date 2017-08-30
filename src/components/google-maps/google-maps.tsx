@@ -17,12 +17,11 @@ export class GoogleMaps {
     map: google.maps.Map;
 
     private get scriptUrl(): string {
-        return `https://maps.googleapis.com/maps/api/js?key=${ this.key }&callback=initMap`;
+        return `https://maps.googleapis.com/maps/api/js?key=${ this.key }`;
     }
 
     @Listen('window:load')
     onWindowLoad(): void {
-        this.registerInitMapCallback();
         this.injectJS();
     }
 
@@ -34,21 +33,18 @@ export class GoogleMaps {
         });
     }
 
-    private registerInitMapCallback(): void {
-        window['initMap'] = this.onSDKReady.bind(this);
-    }
-
     private injectJS(): void {
         const scriptElement: HTMLScriptElement = this.element.querySelector('script');
         scriptElement.async = true;
         scriptElement.defer = true;
+        scriptElement.onload = this.onSDKReady.bind(this);
         scriptElement.src = this.scriptUrl;
     }
 
     render() {
         return [
-          <div class="map"></div>,
-          <script></script>
+            <div class="map"></div>,
+            <script></script>
         ];
     }
 }
