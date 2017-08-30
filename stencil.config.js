@@ -1,6 +1,8 @@
 exports.config = {
     bundles: [
-        { components: ['google-maps', 'hybrid-google-maps', 'cordova-google-maps'] }
+        { components: ['google-maps'] },
+        { components: ['hybrid-google-maps'] },
+        { components: ['cordova-google-maps'] },
     ]
 };
 
