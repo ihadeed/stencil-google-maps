@@ -3,8 +3,7 @@ import { Component, Element, Listen, Prop } from '@stencil/core';
 
 @Component({
     tag: 'google-maps',
-    styleUrl: 'google-maps.scss',
-    shadow: true
+    styleUrl: 'google-maps.scss'
 })
 export class GoogleMaps {
 

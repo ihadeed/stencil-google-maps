@@ -15,7 +15,7 @@ export class HybridGoogleMaps {
         if (isCordovaAvailable) {
             this.element.innerHTML = `<cordova-google-maps></cordova-google-maps>`;
         } else {
-            this.element.innerHTML = `<google-maps key="${ this.key }"></google-maps>`;
+            this.element.innerHTML = `<google-maps key="${ this.key }"></google-maps>`
         }
     }
 

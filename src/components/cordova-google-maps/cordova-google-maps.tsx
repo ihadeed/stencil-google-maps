@@ -4,7 +4,7 @@ declare var plugin: any;
 
 @Component({
     tag: 'cordova-google-maps',
-    styles: 'cordova-google-maps .map { width: 500px; height: 500px; max-width: 100%; max-height: 100%; display: block; }'
+    styleUrl: 'cordova-google-maps.scss'
 })
 export class CordovaGoogleMaps {
 
@@ -16,7 +16,16 @@ export class CordovaGoogleMaps {
 
     componentDidLoad() {
         this.mapElement = this.element.querySelector('div.map') as HTMLElement;
-        this.map = plugin.google.maps.Map.getMap(this.mapElement);
+        this.map = plugin.google.maps.Map.getMap(this.mapElement, {
+            camera : {
+                target: {
+                    lat: 37.422375,
+                    lng: -122.084207
+                },
+                zoom: 10
+            }
+        });
+        this.map.one(plugin.google.maps.event.MAP_READY, () => console.log('Map is ready'));
     }
 
     render() {
